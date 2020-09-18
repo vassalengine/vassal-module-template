@@ -15,7 +15,7 @@
  * License along with this library; if not, copies are available
  * at http://www.opensource.org.
  */
-package MyCustomComponent;
+package my_custom_component;
 
 import VASSAL.build.Buildable;
 import VASSAL.build.GameModule;
@@ -34,19 +34,19 @@ import java.util.Random;
  * and "Allies" chat can always be blue. This would all work better if we actually passed real player info with the chat
  * commands when sending from machine to machine, but as we presently don't this will have to do!
  *
- * To install this class in your module, assuming you have left the package name "MyCustomComponent" and the class name
+ * To install this class in your module, assuming you have left the package name "my_custom_component" and the class name
  * "MyChatter", you must do the following:
- * 1. Ensure the class builds without errors, and find the .class file MyCustomClass.class (in .../target/classes/MyCustomComponent)
+ * 1. Ensure the class builds without errors, and find the .class file MyCustomClass.class (in .../target/classes/my_custom_component)
  * 2. Browse into your .VMOD module file (rename it to .ZIP first if needed. Or get 7-Zip or another app that makes it easy)
- * 3. Make a subdirectory "MyCustomComponent" inside your .VMOD/.ZIP
+ * 3. Make a subdirectory "my_custom_component" inside your .VMOD/.ZIP
  * 4. Put the class file (MyCustomClass.class) into that subdirectory
  * 5. Pull out a copy of the file buildFile (or buildFile.xml from 3.5 onward) from the root directory of the .VMOD/.ZIP
  * 6. Edit the buildFile (or buildFile.xml) with a text editor
- * 7. Find the line that reads: <VASSAL.build.module.Chatter/> and change it to <MyCustomComponent.MyChatter/>
+ * 7. Find the line that reads: <VASSAL.build.module.Chatter/> and change it to <my_custom_component.MyChatter/>
  * 8. If you need to rename your module back from .ZIP to .VMOD you can do it now
  * 9. Run your module! It should find YOUR "chatter" (this class) instead of VASSAL's default one. Yay!
  *
- * You can (and should) of course name MyCustomComponent and MyChatter something else, to match your own game and needs.
+ * You can (and should) of course name my_custom_component and MyChatter something else, to match your own game and needs.
  * And so just replace each reference to either of them with the right thing.
  */
 public class MyChatter extends VASSAL.build.module.Chatter implements CommandEncoder, Buildable {
