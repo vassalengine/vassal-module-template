@@ -16,16 +16,9 @@
     <dependency>
       <groupId>org.vassalengine</groupId>
       <artifactId>vassal-app</artifactId>
-      <version>3.3.3-alpha1</version>
+      <version>3.4.2</version>
     </dependency>
 
-    <!-- test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <repositories>
