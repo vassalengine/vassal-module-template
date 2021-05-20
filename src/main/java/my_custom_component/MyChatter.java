@@ -49,31 +49,32 @@ import java.util.Random;
  * You can (and should) of course name my_custom_component and MyChatter something else, to match your own game and needs.
  * And so just replace each reference to either of them with the right thing.
  */
-public class MyChatter extends VASSAL.build.module.Chatter implements CommandEncoder, Buildable {
+public final class MyChatter extends VASSAL.build.module.Chatter implements CommandEncoder, Buildable {
 
-  protected static final String FIRST_PLAYER_CHAT_PREF        = "CustomChatColor1"; // These are just keys used to register w/ Vassal preferences
-  protected static final String SECOND_PLAYER_CHAT_PREF       = "CustomChatColor2"; // ... rename for your own game (so everyone using this class doesn't clash, haha)
+  private static final String FIRST_PLAYER_CHAT_PREF        = "CustomChatColor1"; // These are just keys used to register w/ Vassal preferences
+  private static final String SECOND_PLAYER_CHAT_PREF       = "CustomChatColor2"; // ... rename for your own game (so everyone using this class doesn't clash, haha)
 
-  protected static final String FIRST_PLAYER_CHAT_COLOR_NAME  = "My Game Name - Axis Player Color";    // Put your game name and side names in here
-  protected static final String SECOND_PLAYER_CHAT_COLOR_NAME = "My Game Name - Allied Player Color";  // ... as it will show up in preference window
+  private static final String FIRST_PLAYER_CHAT_COLOR_NAME  = "My Game Name - Axis Player Color";    // Put your game name and side names in here
+  private static final String SECOND_PLAYER_CHAT_COLOR_NAME = "My Game Name - Allied Player Color";  // ... as it will show up in preference window
 
-  protected static final String FIRST_PLAYER_SIDE_NAME        = "Axis";       // Name of the player side (from player roster) for player 1 in your game.
-  protected static final String SOLO_PLAYER_SIDE_NAME         = "Solitaire";  // Name of the "Solitaire" or "Solo" player side.
-  //protected static final String SECOND_PLAYER_SIDE_NAME     = "Allies";     // Don't actually need to use this, because anybody not matching one
+  private static final String FIRST_PLAYER_SIDE_NAME        = "Axis";       // Name of the player side (from player roster) for player 1 in your game.
+  private static final String SOLO_PLAYER_SIDE_NAME         = "Solitaire";  // Name of the "Solitaire" or "Solo" player side.
+  //private static final String SECOND_PLAYER_SIDE_NAME     = "Allies";     // Don't actually need to use this, because anybody not matching one
                                                                               // of the first two is automatically assumed to be this. But if it wasn't
                                                                               // here to have this explanatory comment, everyone would ask me!
 
-  protected static final Color FIRST_PLAYER_COLOR  = new Color (75, 75, 75); // Color for player 1 (in this sample, grey for Axis)
-  protected static final Color SECOND_PLAYER_COLOR = new Color(9, 32, 229);  // Color for player 2 (in this sample, blue for Allies)
+  private static final Color FIRST_PLAYER_COLOR  = new Color (75, 75, 75); // Color for player 1 (in this sample, grey for Axis)
+  private static final Color SECOND_PLAYER_COLOR = new Color(9, 32, 229);  // Color for player 2 (in this sample, blue for Allies)
 
   // These hold the colors AFTER the player has potentially reconfigured them in the Preferences window
-  Color chat1, chat2;
+  private Color chat1, chat2;
 
   /**
    * Styles a chat message based on the player who sent it.
    * Overrides VASSAL's standard "my machine" / "other machine" logic with a way to assign the CP "grey" color to whoever
    * is playing CP, and the AP "blue" color to whoever is playing AP. And green to a Ref.
    */
+  @Override
   protected String getChatStyle(String s) {
     String style;
 
@@ -109,6 +110,7 @@ public class MyChatter extends VASSAL.build.module.Chatter implements CommandEnc
   /**
    * Adds our two player color styles to the HTML stylesheet
    */
+  @Override
   protected void makeStyleSheet(Font f) {
     // First, let VASSAL's chatter build its normal stylesheet
     super.makeStyleSheet(f);
@@ -178,6 +180,7 @@ public class MyChatter extends VASSAL.build.module.Chatter implements CommandEnc
    * @param html_allowed - flag if html_processing is enabled for this message (allows console to apply security considerations)
    * @return true        - if was accepted as a console command
    */
+  @Override
   public boolean consoleHook(String s, String style, boolean html_allowed) {
 
     // Sample console command to roll a d6 when /d6 is typed as a chat line.

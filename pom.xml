@@ -7,18 +7,22 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- set Vassal version here -->
+    <vassal.version>3.4.3</vassal.version>
+
+    <!-- set Java version here -->
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.vassalengine</groupId>
       <artifactId>vassal-app</artifactId>
-      <version>3.4.2</version>
+      <version>${vassal.version}</version>
     </dependency>
-
   </dependencies>
 
   <repositories>
@@ -27,4 +31,15 @@
       <url>http://www.vassalengine.org/maven/</url>
     </repository>
   </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
