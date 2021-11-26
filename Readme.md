@@ -1,1 +1,1 @@
-Vassal Engine Module Template
+Vassal Module Template

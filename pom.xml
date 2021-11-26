@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.vassalengine</groupId>
-  <artifactId>module-template</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>CombatCommander</groupId>
+	<artifactId>CombatCommander</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
   <properties>
     <!-- set Vassal version here -->
-    <vassal.version>3.4.3</vassal.version>
+    <vassal.version>3.6.0-beta6</vassal.version>
 
     <!-- set Java version here -->
     <maven.compiler.source>11</maven.compiler.source>
@@ -28,7 +28,7 @@
   <repositories>
     <repository>
       <id>vassal-releases</id>
-      <url>http://www.vassalengine.org/maven/</url>
+      <url>https://vassalengine.org/maven/</url>
     </repository>
   </repositories>
 
@@ -36,6 +36,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <showDeprecation>true</showDeprecation>
         </configuration>
