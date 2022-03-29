@@ -8,7 +8,7 @@
 
   <properties>
     <!-- set Vassal version here -->
-    <vassal.version>3.6.5</vassal.version>
+    <vassal.version>3.6.6</vassal.version>
 
     <!-- set Java version here -->
     <maven.compiler.source>11</maven.compiler.source>
