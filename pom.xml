@@ -8,8 +8,7 @@
 
   <properties>
     <!-- set Vassal version here -->
-    <vassal.version>3.6.6</vassal.version>
-
+    <vassal.version>3.6.17</vassal.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
