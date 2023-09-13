@@ -29,6 +29,31 @@
   </repositories>
 
   <build>
+    <sourceDirectory>src</sourceDirectory>
+
+    <!-- bundle files in dist/ into the module -->
+    <resources>
+      <!-- replace variables (e.g., ${project.version} in these files -->
+      <resource>
+        <directory>dist</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>buildFile.xml</include>
+          <include>moduledata</include>
+        </includes>
+      </resource>
+
+      <!-- don't replace variables in these files -->
+      <resource>
+        <directory>dist</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>buildFile.xml</exclude>
+          <exclude>moduledata</exclude>
+        </excludes>
+      </resource>
+    </resources>
+
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
