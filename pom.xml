@@ -1,10 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>NameOfModule</groupId>
-	<artifactId>NameOfModule</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- name and version of the module -->
+  <groupId>NameOfModule</groupId>
+  <artifactId>NameOfModule</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
   <properties>
     <!-- set Vassal version here -->
@@ -60,8 +62,27 @@
         <version>3.11.0</version>
         <configuration>
           <showDeprecation>true</showDeprecation>
+          <!-- Vassal requires compiling for Java 11 compatibility -->
           <release>11</release>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.coderplus.maven.plugins</groupId>
+        <artifactId>copy-rename-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <id>rename-file</id>
+            <phase>package</phase>
+            <goals>
+              <goal>rename</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${project.build.directory}/${project.build.finalName}.jar</sourceFile>
+              <destinationFile>${project.build.directory}/${project.build.finalName}.vmod</destinationFile>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
