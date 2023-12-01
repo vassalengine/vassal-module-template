@@ -78,7 +78,8 @@
            Uncomment the maven-shade-plugin to copy Java dependencies listed
            above in a <dependency> section into the module. Dependencies must
            be listed again in the <includes> section here to be packaged into
-           the module.
+           the module. DO NOT enable the maven-shade-plugin without at least
+           one dependency listed in <includes>.
        -->
 <!--
       <plugin>
