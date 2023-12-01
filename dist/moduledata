@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <data version="1">
-  <version>0.0</version>
+  <version>${project.version}</version>
   <extra1/>
   <extra2/>
   <VassalVersion>3.7.5</VassalVersion>
