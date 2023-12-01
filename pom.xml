@@ -21,6 +21,13 @@
       <artifactId>vassal-app</artifactId>
       <version>${vassal.version}</version>
     </dependency>
+
+    <!-- Add module dependencies which  are not part of Vassal here -->
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom2</artifactId>
+      <version>2.0.5</version>
+    </dependency>
   </dependencies>
 
   <repositories>
@@ -66,6 +73,36 @@
           <release>11</release>
         </configuration>
       </plugin>
+
+       <!--
+           Uncomment the maven-shade-plugin to copy Java dependencies listed
+           above in a <dependency> section into the module. Dependencies must
+           be listed again in the <includes> section here to be packaged into
+           the module.
+       -->
+<!--
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <includes>
+                  <include>org.jdom:jdom2</include>
+                </includes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+-->
+
       <plugin>
         <groupId>com.coderplus.maven.plugins</groupId>
         <artifactId>copy-rename-maven-plugin</artifactId>
