@@ -10,7 +10,7 @@
 
   <properties>
     <!-- set Vassal version here -->
-    <vassal.version>3.7.5</vassal.version>
+    <vassal.version>3.7.25</vassal.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -69,8 +69,8 @@
         <version>3.11.0</version>
         <configuration>
           <showDeprecation>true</showDeprecation>
-          <!-- Vassal requires compiling for Java 11 compatibility -->
-          <release>11</release>
+          <!-- Vassal 3.7.25+ requires compiling for Java 17 compatibility -->
+          <release>1r71</release>
         </configuration>
       </plugin>
 
